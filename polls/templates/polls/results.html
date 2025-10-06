@@ -1,0 +1,17 @@
+<h1>{{ question.question_text }}</h1>
+<h2>****************************************</h2>
+<ul>
+
+{% for votes in question.choice_set.all %}
+    {% if votes.votes <= 1 %}
+        <li>{{votes.choice_text}} {{votes.votes}} vote</li>
+    {% else %}
+        <li>{{votes.choice_text}} {{votes.votes}} votes</li>
+    {% endif %}
+
+    
+{% endfor %}
+</ul>
+
+<!-- <a href="{% url 'polls:detail' question.id %}">Vote again?</a> -->
+<a href="{% url 'polls:index' %}">Vote again?</a>
