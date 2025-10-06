@@ -1,0 +1,11 @@
+{% if question_list %}
+    <ul>
+    {% for questions in question_list %}
+        <!-- this code gives hyperlink -->
+        <li><a href="{%url 'polls:detail' questions.id %}">{{ questions.question_text }}</a></li>
+
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
