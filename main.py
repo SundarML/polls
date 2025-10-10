@@ -1,2 +1,2 @@
-from polls.wsgi import application
+from mysite.wsgi import application
 app = application
